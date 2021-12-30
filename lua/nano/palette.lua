@@ -1,6 +1,9 @@
 local lush = require "lush"
 local hsl = lush.hsl
 
+local dark = require "nano.colors.dark"
+local light = require "nano.colors.light"
+
 local M = {}
 
 M.clrs = {
@@ -22,19 +25,25 @@ M.clrs = {
 	nord14 = hsl(92, 28, 65), -- #A4BF8D  Green
 	nord15 = hsl(311, 20, 63), -- #B48EAD Purple
 }
+--
+-- M.colors = {
+-- 	fg = M.clrs.nord6,
+-- 	bg = M.clrs.nord0,
+-- 	highlight = M.clrs.nord2,
+-- 	subtle = M.clrs.nord1,
+-- 	faded = M.clrs.nord3_bright,
+-- 	salient = M.clrs.nord9,
+-- 	strong = hsl(0, 0, 100),
+-- 	popout = M.clrs.nord12,
+-- 	critical = M.clrs.nord11,
+-- 	success = M.clrs.nord14,
+-- }
 
-M.colors = {
-	fg = M.clrs.nord6,
-	bg = M.clrs.nord0,
-	highlight = M.clrs.nord2,
-	subtle = M.clrs.nord1,
-	faded = M.clrs.nord3_bright,
-	salient = M.clrs.nord9,
-	strong = hsl(0, 0, 100),
-	popout = M.clrs.nord12,
-	critical = M.clrs.nord11,
-	success = M.clrs.nord14,
-}
+M.colors = dark
+
+if vim.o.background == "light" then
+	M.colors = light
+end
 
 local spec = {
 	bold = "bold",
@@ -95,7 +104,7 @@ M.faces = {
 	strong = {
 		fg = M.colors.strong,
 		gui = spec.bold,
-		guisp = spec.bold,
+		-- guisp = spec.bold,
 	},
 	strong_i = {
 		fg = M.colors.bg,

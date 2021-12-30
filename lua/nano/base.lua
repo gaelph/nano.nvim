@@ -1,6 +1,6 @@
 local lush = require "lush"
 
-local palette = require "palette"
+local palette = require "nano.palette"
 local spec = palette.spec
 local faces = palette.faces
 

@@ -1,6 +1,6 @@
 -- indent blank line highlights
 local lush = require "lush"
-local base = require "base"
+local base = require "nano.base"
 
 local M = {}
 

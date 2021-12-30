@@ -1,8 +1,8 @@
 ---@diagnostic disable: undefined-global
 local lush = require "lush"
-local base = require "base"
+local base = require "nano.base"
 
-require "terminal"
+require "nano.terminal"
 
 -- BaseSpec {{{
 local theme = lush.merge {
@@ -14,7 +14,7 @@ local theme = lush.merge {
 			CursorLine { base.Subtle },
 			CursorLineNr { bg = base.Subtle.bg, fg = base.Faded.fg },
 			Error { base.Critical },
-			iCursor { base.DefaultI },
+			iCursor { base.Cursor },
 			LineNr { base.Faded },
 			MatchParen { base.Strong },
 			NonText { fg = base.Normal.bg },
@@ -132,15 +132,15 @@ local theme = lush.merge {
 			},
 		}
 	end),
-	require "plugin.telescope",
-	require "plugin.notify",
-	require "plugin.conflict-marker",
-	require "plugin.gitsigns",
-	require "plugin.lsp",
-	require "plugin.neogit",
-	require "plugin.indent-blankline",
-	require "plugin.treesitter",
-	require "plugin.netrw",
+	require "nano.plugin.telescope",
+	require "nano.plugin.notify",
+	require "nano.plugin.conflict-marker",
+	require "nano.plugin.gitsigns",
+	require "nano.plugin.lsp",
+	require "nano.plugin.neogit",
+	require "nano.plugin.indent-blankline",
+	require "nano.plugin.treesitter",
+	require "nano.plugin.netrw",
 }
 -- }}}
 
