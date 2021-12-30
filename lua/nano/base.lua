@@ -11,7 +11,7 @@ local base = lush(function()
 		Underline { sp = spec.underline },
 		Undercurl { gui = spec.undercurl },
 
-		None(faces.none),
+		None(faces.default),
 		Highlight(faces.highlight),
 
 		Default(faces.default),

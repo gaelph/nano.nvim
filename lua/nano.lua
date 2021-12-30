@@ -17,7 +17,7 @@ local theme = lush.merge {
 			iCursor { base.Cursor },
 			LineNr { base.Faded },
 			MatchParen { base.Strong },
-			NonText { fg = base.Normal.bg },
+			NonText { base.Default },
 			Pmenu { bg = base.Subtle.bg },
 			PmenuSbar { base.Subtle },
 			PmenuSel { base.FadedI },
@@ -44,7 +44,7 @@ local theme = lush.merge {
 
 			-- +-- Float --+
 			NormalFloat { base.Subtle },
-			FloatBorder { base.Subtle, fg = base.Subtle.bg },
+			FloatBorder { base.Subtle, fg = base.Faded.bg },
 
 			-- +-- Gutter --+
 			CursorColumn { base.Subtle },
