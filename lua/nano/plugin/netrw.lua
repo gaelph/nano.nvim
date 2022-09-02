@@ -10,6 +10,7 @@ M = lush(function()
 		netrwExe { base.CriticalI },
 		netrwSymlink { base.Popout },
 		netrwTreeBar { base.Faded },
+		netrwMarkFile { base.Search },
 	}
 end)
 

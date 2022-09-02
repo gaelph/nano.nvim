@@ -8,7 +8,7 @@ local base = lush(function()
 	return {
 		Bold(faces.strong),
 		Italic(faces.faded),
-		Underline { sp = spec.underline },
+		Underline { gui = spec.underline },
 		Undercurl { gui = spec.undercurl },
 
 		None(faces.default),

@@ -28,15 +28,16 @@ lua package.loaded["nano.plugin.neogit"] = nil
 lua package.loaded["nano.plugin.indent-blankline"] = nil
 lua package.loaded["nano.plugin.treesitter"] = nil
 lua package.loaded["nano.plugin.netrw"] = nil
+lua package.loaded["nano.plugin.feline"] = nil
 
 " include our theme file and pass it to lush to apply
 lua require('lush')(require('nano'))
 
+let g:colors_name = "nano"
 " Some of the groups seem to have to be defined here for them to work:
 
 function! s:fixes()
 		if &background ==# "dark"
-			let g:colors_name="nano-dark"
 			" Diagnostics and Spell, to have only the undercurl colored and keep the
 			" syntax color
 			hi! DiagnosticUnderlineError ctermfg=NONE ctermbg=NONE gui=undercurl guisp=#BE6069
@@ -52,7 +53,6 @@ function! s:fixes()
 			" CursorLine, to avoid underline on diffs
 			hi! CursorLine ctermfg=White ctermbg=NONE guifg=NONE guibg=#2f3541 
 		else
-			let g:colors_name="nano-light"
 			" Diagnostics and Spell, to have only the undercurl colored and keep the
 			" syntax color
 			hi! DiagnosticUnderlineError ctermfg=NONE ctermbg=NONE gui=undercurl guisp=#FF6F00
@@ -66,7 +66,7 @@ function! s:fixes()
 			hi! SpellRare  ctermfg=NONE ctermbg=NONE gui=undercurl guisp=#B0BEC5
 
 			" CursorLine, to avoid underline on diffs
-			hi! CursorLine ctermfg=White ctermbg=NONE guifg=NONE guibg=#ECEFF1
+			hi! CursorLine ctermfg=White ctermbg=NONE guifg=NONE guibg=#FAFAFA
 		endif
 
 		" StatusLine, because of a strange bug making ^ as fillchar all over the
@@ -74,7 +74,6 @@ function! s:fixes()
 		hi! StatusLine cterm=NONE gui=NONE
 		hi! StatusLineNC cterm=NONE gui=NONE
 		hi! link StatusLine None
-
 endfunction
 
 augroup NanoFixes

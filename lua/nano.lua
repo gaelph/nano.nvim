@@ -44,7 +44,7 @@ local theme = lush.merge {
 
 			-- +-- Float --+
 			NormalFloat { base.Subtle },
-			FloatBorder { base.Subtle, fg = base.Faded.bg },
+			FloatBorder { base.Subtle, fg = base.Subtle.bg },
 
 			-- +-- Gutter --+
 			CursorColumn { base.Subtle },
@@ -130,6 +130,14 @@ local theme = lush.merge {
 			DiffText {
 				bg = DiffChange.bg.li(10),
 			},
+			StatusLine = {
+				fg = base.Normal.fg,
+				bg = base.FadedI.bg,
+			},
+			StatusLineNC = {
+				StatusLine,
+				fg = base.Subtle.fg,
+			},
 		}
 	end),
 	require "nano.plugin.telescope",
@@ -141,6 +149,7 @@ local theme = lush.merge {
 	require "nano.plugin.indent-blankline",
 	require "nano.plugin.treesitter",
 	require "nano.plugin.netrw",
+	require("nano.plugin.feline").plugin,
 }
 -- }}}
 
