@@ -153,6 +153,12 @@ local theme = lush.merge {
 }
 -- }}}
 
+-- Enable proper color renderigin on Kitty Terminal
+-- see https://sw.kovidgoyal.net/kitty/faq/#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
+if os.getenv "TERM" == "xterm-kitty" then
+	vim.cmd "let &t_ut=''"
+end
+
 return theme
 
 -- -- vi:nowrap
