@@ -78,7 +78,7 @@ local theme = lush.merge {
 			TabLineSel { base.Normal },
 
 			-- +--- Window ---+
-			Title { base.Faded },
+			Title { base.Bold },
 			VertSplit { base.None },
 
 			-- +----------------------+
@@ -149,6 +149,7 @@ local theme = lush.merge {
 	require "nano.plugin.indent-blankline",
 	require "nano.plugin.treesitter",
 	require "nano.plugin.netrw",
+	require "nano.plugin.orgmode",
 	require("nano.plugin.feline").plugin,
 }
 -- }}}
