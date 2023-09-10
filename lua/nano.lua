@@ -151,6 +151,8 @@ local theme = lush.merge {
 	require "nano.plugin.netrw",
 	require "nano.plugin.orgmode",
 	require("nano.plugin.feline").plugin,
+	require("nano.plugin.navic").plugin,
+	-- require("nano.plugin.navic").plugin,
 }
 -- }}}
 

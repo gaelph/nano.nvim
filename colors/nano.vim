@@ -29,6 +29,7 @@ lua package.loaded["nano.plugin.indent-blankline"] = nil
 lua package.loaded["nano.plugin.treesitter"] = nil
 lua package.loaded["nano.plugin.netrw"] = nil
 lua package.loaded["nano.plugin.feline"] = nil
+" lua package.loaded["nano.plugin.navic"] = nil
 
 " include our theme file and pass it to lush to apply
 lua require('lush')(require('nano'))
