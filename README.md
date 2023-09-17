@@ -8,12 +8,18 @@ A Neovim colorscheme based on
 
 ## Installation
 
-**Requirements** - `nano.nvim` requires the `neovim v0.6` or greater to work.
+**Requirements** - `nano.nvim` requires `neovim v0.9` or greater to work.
 
 Using `packer`
 
 ```lua
-use {"gaelph/nano.nvim", requires = {"rktjmp/lush.nvim"}}
+use {"gaelph/nano.nvim"}
+```
+
+Using `lazy.nvim`
+
+```lua
+{"gaelph/nano.nvim"}
 ```
 
 ## Usage
@@ -21,7 +27,9 @@ use {"gaelph/nano.nvim", requires = {"rktjmp/lush.nvim"}}
 In your `init.lua`:
 
 ```lua
-vim.cmd("colorscheme nano")
+vim.cmd("colorscheme nano-light")
+-- or
+vim.cmd("colorscheme nano-dark")
 ```
 
 ## Configuration
@@ -30,13 +38,15 @@ None so far
 
 ## PLugins
 
-> Some of those have still imcomplete support
-
 - [conflict-marker.vim](https://github.com/rhysd/conflict-marker.vim)
-- [ gitsigns.nvim ](https://github.com/lewis6991/gitsigns.nvim)
+- [feline](https://github.com/famiu/feline.nvim)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [navic](https://github.com/SmiteshP/nvim-navic)
 - [neogit](https://github.com/TimUntersberger/neogit) (notification colors)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [nvim-orgmode](https://github.com/nvim-orgmode/orgmode)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (partially)
+- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- netrw
 
