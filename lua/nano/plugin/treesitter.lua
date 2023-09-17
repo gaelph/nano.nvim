@@ -1,19 +1,18 @@
 -- treesitter highlights
 local lush = require "lush"
-local base = require "nano.base"
 
-local M = {}
+return function(variant)
+	local base = require "nano.base"(variant)
 
-M = lush(function()
-	return {
-		TSTag { base.Bold },
-		TSTagDelimiter { base.Faded },
-		--
-		TSNote { base.Todo },
-		--
-		TSWarning { base.PopoutI },
-		TSDanger { base.Critical },
-	}
-end)
-
-return M
+	return lush(function()
+		return {
+			TSTag { base.Bold },
+			TSTagDelimiter { base.Faded },
+			--
+			TSNote { base.Todo },
+			--
+			TSWarning { base.PopoutI },
+			TSDanger { base.Critical },
+		}
+	end)
+end

@@ -1,17 +1,16 @@
 -- notify highlights
 local lush = require "lush"
-local base = require "nano.base"
 
-local M = {}
+return function(variant)
+	local base = require "nano.base"(variant)
 
-M = lush(function()
-	return {
-		netrwClassify { base.Normal },
-		netrwExe { base.CriticalI },
-		netrwSymlink { base.Popout },
-		netrwTreeBar { base.Faded },
-		netrwMarkFile { base.Search },
-	}
-end)
-
-return M
+	return lush(function()
+		return {
+			netrwClassify { base.Normal },
+			netrwExe { base.CriticalI },
+			netrwSymlink { base.Popout },
+			netrwTreeBar { base.Faded },
+			netrwMarkFile { base.Search },
+		}
+	end)
+end

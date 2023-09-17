@@ -1,14 +1,13 @@
 -- indent blank line highlights
 local lush = require "lush"
-local base = require "nano.base"
 
-local M = {}
+return function(variant)
+	local base = require "nano.base"(variant)
 
-M = lush(function()
-	return {
-		IndentBlanklineIndentContext { fg = base.Highlight.bg },
-		IndentBlanklineIndent { base.None },
-	}
-end)
-
-return M
+	return lush(function()
+		return {
+			IndentBlanklineIndentContext { fg = base.Highlight.bg },
+			IndentBlanklineIndent { base.None },
+		}
+	end)
+end
