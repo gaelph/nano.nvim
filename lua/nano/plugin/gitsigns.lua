@@ -27,7 +27,7 @@ return function(variant)
 				bg = GitSignsChangeDelete.fg.mix(base.Normal.bg, 80),
 			},
 			GitSignsCurrentLineBlame {
-				base.Subtle,
+				base.Default,
 				fg = base.Faded.fg.mix(base.Subtle.bg, 30),
 			},
 		}
