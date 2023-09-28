@@ -207,6 +207,8 @@ return function(variant)
 		require "nano.plugin.orgmode"(variant),
 		require "nano.plugin.feline"(variant).plugin,
 		require "nano.plugin.navic"(variant),
+		require "nano.plugin.dapui"(variant),
+		require "nano.plugin.fugitive"(variant),
 		-- require("nano.plugin.navic").plugin,
 	}
 	-- }}}
