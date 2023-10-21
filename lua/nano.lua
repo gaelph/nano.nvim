@@ -3,6 +3,8 @@ local lush = require "lush"
 
 return function(variant)
 	local base = require "nano.base"(variant)
+	local palette = require "nano.palette"(variant)
+	local spec = palette.spec
 
 	-- BaseSpec {{{
 	local theme = lush.merge {
@@ -145,8 +147,9 @@ return function(variant)
 				Delimiter { base.Default },
 				Exception { base.Salient },
 				Float { base.Popout },
-				Function { base.Strong },
+				Function { gui = spec.bold },
 				Identifier { base.Default },
+				sym "@attribute" { base.Faded },
 				sym "@property" { base.Default },
 				Include { base.Salient },
 				Keyword { base.Salient },
