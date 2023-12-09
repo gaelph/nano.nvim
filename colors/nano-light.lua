@@ -285,6 +285,7 @@ local colors = {
 	netrwMarkFile = {},
 	-- PATCH_CLOSE
 	-- content here will not be touched
+	["@lsp.type.comment"] = { link = "Comment" },
 }
 
 -- colorschemes generally want to do this
@@ -295,6 +296,11 @@ if os.getenv "TERM" == "xterm-kitty" then
 end
 vim.o.background = "light"
 vim.cmd "let g:colors_name='nano_light'"
+
+-- clear @lsp highlights
+for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+	vim.api.nvim_set_hl(0, group, {})
+end
 
 -- apply highlight groups
 for group, attrs in pairs(colors) do
@@ -313,10 +319,6 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.cmd [[wincmd J]]
 	end,
 })
-
-for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
-	vim.api.nvim_set_hl(0, group, {})
-end
 
 -- some fixes for unwanted colors in the StatusLine
 -- and underline in diff on cursorline

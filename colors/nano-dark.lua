@@ -281,6 +281,7 @@ local colors = {
 	netrwTreeBar = { link = "Faded" },
 	-- PATCH_CLOSE
 	-- content here will not be touched
+	["@lsp.type.comment"] = { link = "Comment" },
 }
 
 -- colorschemes generally want to do this
@@ -292,10 +293,28 @@ end
 vim.o.background = "dark"
 vim.cmd "let g:colors_name='nano_dark'"
 
+-- clear @lsp highlights
+for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+	vim.api.nvim_set_hl(0, group, {})
+end
+
 -- apply highlight groups
 for group, attrs in pairs(colors) do
 	vim.api.nvim_set_hl(0, group, attrs)
 end
+
+vim.api.nvim_create_autocmd("FileType", {
+	group = ag,
+	pattern = "qf",
+	callback = function()
+		vim.api.nvim_set_option_value("winhighlight", "Normal:Subtle", {
+			scope = "local",
+			win = 0,
+		})
+		vim.cmd [[resize 10]]
+		vim.cmd [[wincmd J]]
+	end,
+})
 
 -- some fixes for unwanted colors in the StatusLine
 -- and underline in diff on cursorline
