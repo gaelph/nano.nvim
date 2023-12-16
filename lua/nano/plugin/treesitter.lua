@@ -4,15 +4,22 @@ local lush = require "lush"
 return function(variant)
 	local base = require "nano.base"(variant)
 
-	return lush(function()
+	return lush(function(injected_functions)
+		local sym = injected_functions.sym
 		return {
-			TSTag { base.Bold },
-			TSTagDelimiter { base.Faded },
+			sym "@attribute" { base.Faded, gui = "nocombine" },
+			sym "@property" { base.Default },
+			sym "@tag" { base.Bold },
+			sym "@tag.delimiter" { base.Faded },
+			sym "@tag.attribute" { base.Default },
+			sym "@function" { base.Default, gui = "nocombine,bold" },
 			--
-			TSNote { base.Todo },
+			sym "@text.todo" { base.Bold },
+			sym "@text.note" { base.Bold },
+			sym "@text.warning" { base.Popout, gui = "bold" },
+			sym "@text.danger" { base.Critical, gui = "bold,nocombine" },
 			--
-			TSWarning { base.PopoutI },
-			TSDanger { base.Critical },
+			sym "@comment.documentation" { base.Salient },
 		}
 	end)
 end

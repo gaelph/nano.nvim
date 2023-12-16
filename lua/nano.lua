@@ -135,6 +135,9 @@ return function(variant)
 				DiagnosticVirtualTextInfo { base.Salient },
 				DiagnosticsVirtualTextHint { base.Salient },
 
+				QuickFixLine { base.Highlight },
+				qfFileName { base.Normal },
+
 				-- +----------------------+
 				-- + Language Base Groups +
 				-- +----------------------+
@@ -149,8 +152,6 @@ return function(variant)
 				Float { base.Popout },
 				Function { gui = spec.bold },
 				Identifier { base.Default },
-				sym "@attribute" { base.Faded },
-				sym "@property" { base.Default },
 				Include { base.Salient },
 				Keyword { base.Salient },
 				Label { base.Salient },
@@ -166,8 +167,6 @@ return function(variant)
 				String { fg = base.CriticalI.fg },
 				Structure { base.Salient },
 				Tag { base.Bold },
-				sym "@tag.delimiter" { base.Faded },
-				sym "@tag.attribute" { base.Default },
 				Todo { base.Strong },
 				Type { base.Salient },
 				Typedef { base.Salient },
