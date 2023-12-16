@@ -287,6 +287,7 @@ netrwMarkFile = {},
 ["@attribute"] = {fg = "#B0BEC4", nocombine = true},
 ["@function"] = {fg = "#36464E", bold = true, nocombine = true},
 ["@text.danger"] = {fg = "#FFFFFF", bg = "#FF6A00", bold = true, nocombine = true},
+["@text.mark"] = {fg = "#000000", italic = true},
 ["@text.warning"] = {fg = "#FFA98F", bold = true},
 	-- PATCH_CLOSE
 	-- content here will not be touched

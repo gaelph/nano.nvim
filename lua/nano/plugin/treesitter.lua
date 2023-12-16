@@ -16,6 +16,7 @@ return function(variant)
 			--
 			sym "@text.todo" { base.Bold },
 			sym "@text.note" { base.Bold },
+			sym "@text.mark" { base.Bold, gui = "italic" },
 			sym "@text.warning" { base.Popout, gui = "bold" },
 			sym "@text.danger" { base.Critical, gui = "bold,nocombine" },
 			--
