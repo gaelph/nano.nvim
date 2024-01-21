@@ -21,6 +21,14 @@ return function(variant)
 			sym "@text.danger" { base.Critical, gui = "bold,nocombine" },
 			--
 			sym "@comment.documentation" { base.Salient },
+			-- javascript
+			sym "@comment.documentation.javascript" { base.Faded },
+			sym "@keyword.jsdoc" { base.Salient },
+			-- lua
+			sym "@comment.documentation.lua" { base.Faded },
+			sym "@lsp.mod.documentation.lua" { base.Salient },
+			sym "@lsp.typemod.keyword.documentation.lua" { base.Salient },
+			sym "@lsp.type.type.lua" { base.Salient },
 		}
 	end)
 end
