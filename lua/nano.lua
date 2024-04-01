@@ -149,7 +149,7 @@ return function(variant)
 				Define { base.Salient },
 				Delimiter { base.Default },
 				Exception { base.Salient },
-				Float { base.Popout },
+				Float { fg = base.CriticalI.fg },
 				Function { gui = spec.bold },
 				Identifier { base.Default },
 				Include { base.Salient },
@@ -177,12 +177,15 @@ return function(variant)
 				-- +--- Diff ---+
 				DiffAdd {
 					bg = base.Success.fg.mix(base.Normal.bg, 80),
+					fg = base.Success.fg.mix(base.Normal.fg, 80),
 				},
 				DiffChange {
 					bg = base.Salient.fg.mix(base.Normal.bg, 74),
+					fg = base.Salient.fg.mix(base.Normal.fg, 74),
 				},
 				DiffDelete {
 					bg = base.Critical.bg.mix(base.Normal.bg, 73),
+					fg = base.Critical.bg.mix(base.Normal.fg, 73),
 				},
 				DiffText {
 					bg = DiffChange.bg.li(10),

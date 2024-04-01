@@ -4,6 +4,7 @@ local dark = require "nano.colors.dark"
 local light = require "nano.colors.light"
 
 return function(variant)
+	print("Setting terminal colors: " .. variant)
 	local palette = variant == "light" and light or dark
 	-- Neovim Terminal Colors --
 	v.terminal_color_0 = palette.color_0

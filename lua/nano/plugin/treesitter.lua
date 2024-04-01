@@ -20,7 +20,7 @@ return function(variant)
 			sym "@text.warning" { base.Popout, gui = "bold" },
 			sym "@text.danger" { base.Critical, gui = "bold,nocombine" },
 			--
-			sym "@comment.documentation" { base.Salient },
+			-- sym "@comment.documentation" { base.Faded },
 			-- javascript
 			sym "@comment.documentation.javascript" { base.Faded },
 			sym "@keyword.jsdoc" { base.Salient },

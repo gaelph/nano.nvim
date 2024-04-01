@@ -1,10 +1,6 @@
 -- colors/colorscheme.lua
--- local TERM = os.getenv "TERM"
--- if TERM ~= nil and TERM ~= "xterm-kitty" and vim.startswith(TERM, "xterm") then
--- 	vim.o.termguicolors = false
--- else
-vim.o.termguicolors = true
--- end
+local Utils = require "nano.utils"
+-- Utils.auto_term_gui_colors()
 
 vim.highlight.priorities.semantic_tokens = 99
 vim.highlight.priorities.treesitter = 120
@@ -12,7 +8,7 @@ vim.highlight.priorities.treesitter = 120
 local colors = {
 	-- content here will not be touched
 	-- PATCH_OPEN
-	Normal = { fg = "#ECEFF4", bg = "#2B303B" },
+	Normal = { fg = "#36464E", bg = "#FFFFFF" },
 	ModeMsg = { link = "Normal" },
 	NotifyDEBUGBody = { link = "Normal" },
 	NotifyERRORBody = { link = "Normal" },
@@ -32,7 +28,7 @@ local colors = {
 	TabLineSel = { link = "Normal" },
 	netrwClassify = { link = "Normal" },
 	qfFileName = { link = "Normal" },
-	Bold = { fg = "#FFFFFF", bold = true },
+	Bold = { fg = "#000000", bold = true },
 	OrgTSHeadlineLevel1 = { link = "Bold" },
 	Tag = { link = "Bold" },
 	Title = { link = "Bold" },
@@ -40,14 +36,14 @@ local colors = {
 	["@text.note"] = { link = "Bold" },
 	["@text.todo"] = { link = "Bold" },
 	Conceal = {},
-	ConflictMarkerBegin = { bg = "#455254" },
-	ConflictMarkerCommonAncestorsHunk = { bg = "#504950" },
-	ConflictMarkerEnd = { bg = "#3D495C" },
-	ConflictMarkerOurs = { bg = "#455254" },
-	ConflictMarkerTheirs = { bg = "#3D495C" },
-	Critical = { fg = "#2B303B", bg = "#BE6069" },
+	ConflictMarkerBegin = { bg = "#E3E8E3" },
+	ConflictMarkerCommonAncestorsHunk = { bg = "#F5F1EF" },
+	ConflictMarkerEnd = { bg = "#DDDAE2" },
+	ConflictMarkerOurs = { bg = "#E3E8E3" },
+	ConflictMarkerTheirs = { bg = "#DDDAE2" },
+	Critical = { fg = "#FFFFFF", bg = "#FF6A00" },
 	Error = { link = "Critical" },
-	CriticalI = { fg = "#BE6069" },
+	CriticalI = { fg = "#FF6A00" },
 	DapUIStop = { link = "CriticalI" },
 	DapUIStopNC = { link = "CriticalI" },
 	DapUIWatchesEmpty = { link = "CriticalI" },
@@ -62,12 +58,12 @@ local colors = {
 	NotifyERRORIcon = { link = "CriticalI" },
 	NotifyERRORTitle = { link = "CriticalI" },
 	netrwExe = { link = "CriticalI" },
-	Cursor = { fg = "#2B303B", bg = "#ECEFF4" },
+	Cursor = { fg = "#FFFFFF", bg = "#36464E" },
 	iCursor = { link = "Cursor" },
-	CursorLine = { bg = "#2F3541", sp = "none" },
-	CursorLineNr = { fg = "#59657D", bg = "#2F3541" },
-	DapUIBreakpointsCurrentLine = { fg = "#9FBB86", bold = true },
-	DapUIFloatBorder = { fg = "#2F3541", bg = "#2F3541" },
+	CursorLine = { bg = "#FAFAFA", sp = "none" },
+	CursorLineNr = { fg = "#B0BEC4", bg = "#FAFAFA" },
+	DapUIBreakpointsCurrentLine = { fg = "#68BB6C", bold = true },
+	DapUIFloatBorder = { fg = "#FAFAFA", bg = "#FAFAFA" },
 	DapUIBreakpointsLine = { link = "DapUILineNumber" },
 	DapUIFrameName = { link = "DapUINormal" },
 	DapUIStepBack = { link = "DapUINormal" },
@@ -80,8 +76,8 @@ local colors = {
 	DapUIStepOverNC = { link = "DapUINormal" },
 	DapUIValue = { link = "DapUINormal" },
 	DapUIRestartNC = {},
-	DapUIVariable = { fg = "#ECEFF4", bold = true },
-	Default = { fg = "#ECEFF4" },
+	DapUIVariable = { fg = "#36464E", bold = true },
+	Default = { fg = "#36464E" },
 	Boolean = { link = "Default" },
 	DapUINormal = { link = "Default" },
 	DapUINormalNC = { link = "Default" },
@@ -98,17 +94,17 @@ local colors = {
 	fugitiveHash = { link = "Default" },
 	["@property"] = { link = "Default" },
 	["@tag.attribute"] = { link = "Default" },
-	DefaultI = { fg = "#2B303B", bg = "#ECEFF4" },
+	DefaultI = { fg = "#FFFFFF", bg = "#36464E" },
 	Macro = { link = "Define" },
-	DiagnosticUnderlineError = { fg = "none", sp = "#BE6069", undercurl = true },
-	DiagnosticUnderlineHint = { fg = "none", sp = "#BE6069", undercurl = true },
-	DiagnosticUnderlineInfo = { fg = "none", sp = "#BE6069", undercurl = true },
-	DiagnosticUnderlineWarn = { fg = "none", sp = "#BE6069", undercurl = true },
-	DiffAdd = { fg = "#DBE2E6", bg = "#434E51" },
-	DiffChange = { fg = "#D1D9E6", bg = "#3E4C60" },
-	DiffDelete = { fg = "#D3D0DC", bg = "#504653" },
-	DiffText = { bg = "#4D5D75" },
-	Faded = { fg = "#59657D" },
+	DiagnosticUnderlineError = { fg = "none", sp = "#FF6A00", undercurl = true },
+	DiagnosticUnderlineHint = { fg = "none", sp = "#FF6A00", undercurl = true },
+	DiagnosticUnderlineInfo = { fg = "none", sp = "#FF6A00", undercurl = true },
+	DiagnosticUnderlineWarn = { fg = "none", sp = "#FF6A00", undercurl = true },
+	DiffAdd = { fg = "#43605E", bg = "#E6EAE6" },
+	DiffChange = { fg = "#3D4261", bg = "#DAD6E0" },
+	DiffDelete = { fg = "#5D5246", bg = "#E7DCD5" },
+	DiffText = { bg = "#DDD9E2" },
+	Faded = { fg = "#B0BEC4" },
 	Comment = { link = "Faded" },
 	DapUIDecoration = { link = "Faded" },
 	DapUILineNumber = { link = "Faded" },
@@ -129,19 +125,19 @@ local colors = {
 	["@comment.documentation.javascript"] = { link = "Faded" },
 	["@comment.documentation.lua"] = { link = "Faded" },
 	["@tag.delimiter"] = { link = "Faded" },
-	FadedI = { fg = "#2B303B", bg = "#59657D" },
+	FadedI = { fg = "#FFFFFF", bg = "#B0BEC4" },
 	PmenuSel = { link = "FadedI" },
-	Float = { fg = "#BE6069" },
-	FloatBorder = { fg = "#2F3541", bg = "#2F3541" },
-	FoldColumn = { fg = "#59657D", bg = "#2B303B" },
-	Folded = { fg = "#59657D" },
+	Float = { fg = "#FF6A00" },
+	FloatBorder = { fg = "#FAFAFA", bg = "#FAFAFA" },
+	FoldColumn = { fg = "#B0BEC4", bg = "#FFFFFF" },
+	Folded = { fg = "#B0BEC4" },
 	Function = { bold = true },
-	GitSignsAddNr = { fg = "#707E99", bg = "#434E51" },
-	GitSignsChangeDeleteNr = { fg = "#707E99", bg = "#4A464E" },
-	GitSignsChangeNr = { fg = "#707E99", bg = "#3B4659" },
-	GitSignsCurrentLineBlame = { fg = "#4C566B" },
-	GitSignsDeleteNr = { fg = "#707E99", bg = "#433F4B" },
-	Highlight = { bg = "#394151" },
+	GitSignsAddNr = { fg = "#BECACF", bg = "#E6EAE6" },
+	GitSignsChangeDeleteNr = { fg = "#BECACF", bg = "#F7F4F3" },
+	GitSignsChangeNr = { fg = "#BECACF", bg = "#E2E0E6" },
+	GitSignsCurrentLineBlame = { fg = "#C9D0D4" },
+	GitSignsDeleteNr = { fg = "#BECACF", bg = "#EBE5E0" },
+	Highlight = { bg = "#EDF0F2" },
 	LspReferenceRead = { link = "Highlight" },
 	LspReferenceText = { link = "Highlight" },
 	LspReferenceWrite = { link = "Highlight" },
@@ -150,23 +146,21 @@ local colors = {
 	TelescopeSelection = { link = "Highlight" },
 	Visual = { link = "Highlight" },
 	VisualNOS = { link = "Highlight" },
-	IndentBlanklineIndentContext = { fg = "#394151" },
-	Italic = { fg = "#59657D" },
-	NavicText = { fg = "#ECEFF4", bg = "#394151" },
+	IndentBlanklineIndentContext = { fg = "#EDF0F2" },
+	Italic = { fg = "#B0BEC4" },
+	NavicText = { fg = "#36464E", bg = "#EDF0F2" },
 	NavicIcons = { link = "NavicText" },
 	NavicSeparator = { link = "NavicText" },
-	NeogitDiffAdd = { link = "DiffAdd" },
-	NeogitDiffAddHighlight = { link = "DiffAdd" },
-	NeogitDiffDelete = { link = "DiffDelete" },
-	NeogitDiffDeleteHighlight = { link = "DiffDelete" },
-	None = { fg = "#ECEFF4" },
+	NeogitDiffAdd = {},
+	NeogitDiffDelete = {},
+	None = { fg = "#36464E" },
 	EndOfBuffer = { link = "None" },
 	IndentBlanklineIndent = { link = "None" },
 	TabLineFill = { link = "None" },
 	VertSplit = { link = "None" },
-	Number = { fg = "#BE6069" },
-	Pmenu = { bg = "#2F3541" },
-	Popout = { fg = "#D18771" },
+	Number = { fg = "#FF6A00" },
+	Pmenu = { bg = "#FAFAFA" },
+	Popout = { fg = "#FFA98F" },
 	Character = { link = "Popout" },
 	DapUIModifiedValue = { link = "Popout" },
 	DiagnosticSignWarn = { link = "Popout" },
@@ -182,13 +176,13 @@ local colors = {
 	SpecialChar = { link = "Popout" },
 	fugitiveCount = { link = "Popout" },
 	netrwSymlink = { link = "Popout" },
-	PopoutI = { fg = "#2B303B", bg = "#D18771" },
+	PopoutI = { fg = "#FFFFFF", bg = "#FFA98F" },
 	IncSearch = { link = "PopoutI" },
 	OrgAgendaScheduledPast = { link = "PopoutI" },
 	Search = { link = "PopoutI" },
 	WarningMsg = { link = "PopoutI" },
 	PreCondit = { link = "PreProc" },
-	Salient = { fg = "#81A1C1" },
+	Salient = { fg = "#673AB6" },
 	Conditional = { link = "Salient" },
 	DapUIBreakpointsPath = { link = "Salient" },
 	DapUIScope = { link = "Salient" },
@@ -230,92 +224,85 @@ local colors = {
 	["@lsp.mod.documentation.lua"] = { link = "Salient" },
 	["@lsp.type.type.lua"] = { link = "Salient" },
 	["@lsp.typemod.keyword.documentation.lua"] = { link = "Salient" },
-	SalientI = { fg = "#2B303B", bg = "#81A1C1" },
+	SalientI = { fg = "#FFFFFF", bg = "#673AB6" },
 	PmenuThumb = { link = "SalientI" },
 	WildMenu = { link = "SalientI" },
-	SpellBad = { sp = "#BE6069", undercurl = true },
-	SpellCap = { sp = "#D18771", undercurl = true },
-	SpellLocal = { sp = "#ECEFF4", undercurl = true },
-	SpellRare = { sp = "#ECEFF4", undercurl = true },
-	StatusComponentBase = { fg = "#ECEFF4", bg = "#394151" },
+	SpellBad = { sp = "#FF6A00", undercurl = true },
+	SpellCap = { sp = "#FFA98F", undercurl = true },
+	SpellLocal = { sp = "#36464E", undercurl = true },
+	SpellRare = { sp = "#36464E", undercurl = true },
+	StatusComponentBase = { fg = "#36464E", bg = "#EDF0F2" },
 	StatusComponentDefault = { link = "StatusComponentBase" },
 	StatusComponentVimInactive = { link = "StatusComponentBase" },
-	StatusComponentFilename = { fg = "#FFFFFF", bg = "#394151" },
-	StatusComponentInactive = { fg = "#59657D", bg = "#394151" },
-	StatusComponentPosition = { fg = "#2B303B", bg = "#59657D" },
-	StatusComponentVimInsert = { fg = "#ECEFF4", bg = "#D18771" },
+	StatusComponentFilename = { fg = "#000000", bg = "#EDF0F2" },
+	StatusComponentInactive = { fg = "#B0BEC4", bg = "#EDF0F2" },
+	StatusComponentPosition = { fg = "#FFFFFF", bg = "#B0BEC4" },
+	StatusComponentVimInsert = { fg = "#36464E", bg = "#FFA98F" },
 	StatusComponentVimCommand = { link = "StatusComponentVimInsert" },
 	StatusComponentVimReplace = { link = "StatusComponentVimInsert" },
-	StatusComponentVimNormal = { fg = "#ECEFF4", bg = "#59657D" },
+	StatusComponentVimNormal = { fg = "#36464E", bg = "#B0BEC4" },
 	StatusComponentVimEnter = { link = "StatusComponentVimNormal" },
 	StatusComponentVimMore = { link = "StatusComponentVimNormal" },
 	StatusComponentVimShell = { link = "StatusComponentVimNormal" },
 	StatusComponentVimTerm = { link = "StatusComponentVimNormal" },
-	StatusComponentVimOp = { fg = "#ECEFF4", bg = "#59657D" },
+	StatusComponentVimOp = { fg = "#36464E", bg = "#B0BEC4" },
 	StatusComponentVimVReplace = { link = "StatusComponentVimReplace" },
-	StatusComponentVimVisual = { bg = "#9FBB86" },
+	StatusComponentVimVisual = { bg = "#68BB6C" },
 	StatusComponentVimBlock = { link = "StatusComponentVimVisual" },
 	StatusComponentVimLines = { link = "StatusComponentVimVisual" },
 	StatusComponentVimSelect = { link = "StatusComponentVimVisual" },
-	String = { fg = "#BE6069" },
-	Strong = { fg = "#FFFFFF", bold = true },
+	String = { fg = "#FF6A00" },
+	Strong = { fg = "#000000", bold = true },
 	Constant = { link = "Strong" },
 	MatchParen = { link = "Strong" },
 	StorageClass = { link = "Strong" },
 	Todo = { link = "Strong" },
 	fugitiveStop = { link = "Strong" },
 	fugitiveSymbolicRef = { link = "Strong" },
-	StrongI = { fg = "#2B303B", bg = "#FFFFFF" },
-	Subtle = { bg = "#2F3541" },
+	StrongI = { fg = "#FFFFFF", bg = "#000000" },
+	Subtle = { bg = "#FAFAFA" },
 	ColorColumn = { link = "Subtle" },
 	CursorColumn = { link = "Subtle" },
 	DapUINormalFloat = { link = "Subtle" },
 	NormalFloat = { link = "Subtle" },
 	PmenuSbar = { link = "Subtle" },
-	SubtleI = { fg = "#394151" },
-	Success = { fg = "#9FBB86" },
+	SubtleI = { fg = "#EDF0F2" },
+	Success = { fg = "#68BB6C" },
 	DapUIBreakpointsInfo = { link = "Success" },
 	DapUIPlayPause = { link = "Success" },
 	DapUIPlayPauseNC = { link = "Success" },
 	DapUIRestart = { link = "Success" },
 	DapUIThread = { link = "Success" },
 	GitSignsAdd = { link = "Success" },
-	SuccessI = { fg = "#2B303B", bg = "#9FBB86" },
-	TelescopeBorder = { fg = "#2F3541", bg = "#2F3541" },
+	SuccessI = { fg = "#FFFFFF", bg = "#68BB6C" },
+	TelescopeBorder = { fg = "#FAFAFA", bg = "#FAFAFA" },
 	TelescopePreviewBorder = { link = "TelescopeBorder" },
 	TelescopePromptBorder = { link = "TelescopeBorder" },
 	TelescopeResultsBorder = { link = "TelescopeBorder" },
-	TelescopeNormal = { fg = "#ECEFF4", bg = "#2F3541" },
+	TelescopeNormal = { fg = "#36464E", bg = "#FAFAFA" },
 	TelescopePrompt = { link = "TelescopeNormal" },
 	Undercurl = { undercurl = true },
 	Underline = { underline = true },
 	fugitiveHeader = {},
 	fugitiveHelpHeader = { link = "fugitiveHeader" },
-	fugitiveHeading = { fg = "#81A1C1", bold = true },
+	fugitiveHeading = { fg = "#673AB6", bold = true },
 	fugitiveStagedHeading = { link = "fugitiveHeading" },
 	fugitiveUnstagedHeading = { link = "fugitiveHeading" },
 	fugitiveUntrackedHeading = { link = "fugitiveHeading" },
 	netrwMarkFile = {},
-	["@attribute"] = { fg = "#59657D", nocombine = true },
-	["@function"] = { fg = "#ECEFF4", bold = true, nocombine = true },
+	["@attribute"] = { fg = "#B0BEC4", nocombine = true },
+	["@function"] = { fg = "#36464E", bold = true, nocombine = true },
 	["@text.danger"] = {
-		fg = "#2B303B",
-		bg = "#BE6069",
+		fg = "#FFFFFF",
+		bg = "#FF6A00",
 		bold = true,
 		nocombine = true,
 	},
-	["@text.mark"] = { fg = "#FFFFFF", italic = true },
-	["@text.warning"] = { fg = "#D18771", bold = true },
+	["@text.mark"] = { fg = "#000000", italic = true },
+	["@text.warning"] = { fg = "#FFA98F", bold = true },
 	-- PATCH_CLOSE
 	-- content here will not be touched
 	["@lsp.type.comment"] = { link = "Comment" },
-	-- help
-	["helpHyperTextEntry"] = { link = "Salient" },
-	["helpHeader"] = { link = "Strong" },
-	["helpURL"] = { link = "Salient" },
-	["helpSectionDelim"] = { link = "Faded" },
-	["helpCommand"] = { link = "Strong" },
-	["helpExample"] = { fg = "#ECEFF4", bg = "NONE", italic = true },
 }
 
 if not vim.g.termguicolors then
@@ -326,24 +313,21 @@ if not vim.g.termguicolors then
 		colors.Default.ctermfg = "Black"
 		colors.DefaultI.ctermbg = "Black"
 		colors.DefaultI.ctermfg = "White"
+		colors.Subtle.ctermbg = "White"
 		colors.Highlight.ctermbg = 7
-		colors.Subtle.ctermbg = 15
-		colors.SubtleI.ctermfg = 15
-		colors.Faded.ctermfg = 8
-		colors.FadedI.ctermbg = 8
 	else
 		colors.Normal.ctermfg = "White"
-		colors.Normal.ctermbg = "None"
+		colors.Normal.ctermbg = "Black"
 		colors.Cursor.ctermfg = "White"
 		colors.Default.ctermfg = "White"
 		colors.DefaultI.ctermbg = "White"
 		colors.DefaultI.ctermfg = "Black"
-		colors.Highlight.ctermbg = 8
-		colors.Subtle.ctermbg = 0
-		colors.SubtleI.ctermfg = 0
-		colors.Faded.ctermfg = 8
-		colors.FadedI.ctermbg = 8
+		colors.Subtle.ctermbg = "DarkGray"
+		colors.Highlight.ctermbg = "Gray"
 	end
+	colors.SubtleI.ctermfg = 15
+	colors.Faded.ctermfg = 8
+	colors.FadedI.ctermbg = 8
 	colors.Salient.ctermfg = "Magenta"
 	colors.SalientI.ctermfg = 0
 	colors.SalientI.ctermbg = "Magenta"
@@ -418,6 +402,9 @@ if not vim.g.termguicolors then
 	colors.TelescopeNormal.ctermbg = colors.Subtle.ctermbg
 	colors.TelescopeBorder.ctermbg = colors.Subtle.ctermbg
 	colors.TelescopeBorder.ctermfg = colors.Subtle.ctermbg
+	colors.IndentBlanklineIndentContext.ctermfg = "DarkGray"
+	colors.IndentBlanklineIndent.ctermfg = "None"
+	colors.IndentBlanklineIndent.ctermbg = "None"
 end
 
 -- colorschemes generally want to do this
@@ -426,8 +413,8 @@ vim.cmd "set t_Co=256"
 if os.getenv "TERM" == "xterm-kitty" then
 	vim.cmd "let &t_ut=''"
 end
--- vim.o.background = "dark"
-vim.cmd "let g:colors_name='nano_dark'"
+-- vim.o.background = "light"
+vim.cmd "let g:colors_name='nano_light'"
 
 -- clear @lsp highlights
 for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
@@ -440,7 +427,7 @@ for group, attrs in pairs(colors) do
 end
 
 vim.api.nvim_create_autocmd("FileType", {
-	group = ag,
+	group = Utils.autogroup,
 	pattern = "qf",
 	callback = function()
 		vim.api.nvim_set_option_value("winhighlight", "Normal:Subtle", {
@@ -458,7 +445,5 @@ vim.cmd [[
 		hi! StatusLine cterm=NONE gui=NONE
 		hi! StatusLineNC cterm=NONE gui=NONE
 		hi! link StatusLine None
-    hi CursorLine ctermfg=2b303b
+    " hi CursorLine ctermfg=Black
 ]]
-
--- require "nano.terminal" "dark"

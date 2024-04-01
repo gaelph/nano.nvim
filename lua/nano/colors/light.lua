@@ -28,6 +28,17 @@ local M = {
 	color_13 = hsl "#673ab7", -- Bright Magenta
 	color_14 = hsl "#b0bec5", -- Bright SkyBlue
 	color_15 = hsl "#eceff1", -- Bright White
+	cterm = {
+		fg = "fg",
+		bg = "bg",
+		subtle = 15,
+		critical = "DarkRed",
+		salient = "Magenta",
+		strong = "Black",
+		popout = "Yellow",
+		highlight = "LightGray",
+		faded = "DarkGray",
+	},
 }
 
 return M
