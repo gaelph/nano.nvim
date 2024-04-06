@@ -303,6 +303,11 @@ local colors = {
 	-- PATCH_CLOSE
 	-- content here will not be touched
 	["@lsp.type.comment"] = { link = "Comment" },
+	--
+	["@string.yaml"] = { link = "Default" },
+	["@property.yaml"] = { link = "Salient" },
+	["@string.json"] = { link = "Default" },
+	["@property.json"] = { link = "Salient" },
 }
 
 if not vim.g.termguicolors then

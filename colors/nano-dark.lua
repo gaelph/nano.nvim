@@ -316,6 +316,11 @@ local colors = {
 	["helpSectionDelim"] = { link = "Faded" },
 	["helpCommand"] = { link = "Strong" },
 	["helpExample"] = { fg = "#ECEFF4", bg = "NONE", italic = true },
+	--
+	["@string.yaml"] = { link = "Default" },
+	["@property.yaml"] = { link = "Salient" },
+	["@string.json"] = { link = "Default" },
+	["@property.json"] = { link = "Salient" },
 }
 
 if not vim.g.termguicolors then
