@@ -21,15 +21,15 @@ return function(variant)
 
 	M.faces = {
 		none = {
-			bg = "bg",
-			fg = "bg",
+			bg = 0,
+			fg = 15,
 			ctermbg = M.colors.cterm.bg,
 			ctermfg = M.colors.cterm.bg,
 		},
 		normal = {
 			bg = M.colors.bg,
 			fg = M.colors.fg,
-			ctermbg = M.colors.cterm.bg,
+			ctermbg = "NONE",
 			ctermfg = M.colors.cterm.fg,
 		},
 		cursor = {
@@ -69,6 +69,7 @@ return function(variant)
 		default = {
 			fg = M.colors.fg,
 			ctermfg = M.colors.cterm.fg,
+			ctermbg = "NONE",
 		},
 		default_i = {
 			fg = M.colors.bg,
@@ -90,6 +91,9 @@ return function(variant)
 			fg = M.colors.strong,
 			ctermfg = M.colors.cterm.strong,
 			bold = true,
+			cterm = {
+				bold = false,
+			},
 			-- guisp = spec.bold,
 		},
 		strong_i = {

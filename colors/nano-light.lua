@@ -1,10 +1,6 @@
 -- colors/colorscheme.lua
--- local TERM = os.getenv "TERM"
--- if TERM ~= nil and TERM ~= "xterm-kitty" and vim.startswith(TERM, "xterm") then
--- 	vim.o.termguicolors = false
--- else
-vim.o.termguicolors = true
--- end
+local Utils = require "nano.utils"
+Utils.auto_term_gui_colors()
 
 vim.highlight.priorities.semantic_tokens = 99
 vim.highlight.priorities.treesitter = 120
@@ -50,7 +46,7 @@ local colors = {
 	ConflictMarkerTheirs = { bg = "#DDDAE2" },
 	Critical = { fg = "#FFFFFF", bg = "#FF6A00" },
 	Error = { link = "Critical" },
-	CriticalI = { fg = "#FF6A00" },
+	CriticalI = { fg = "#FF6A00", bold = true, nocombine = true },
 	DapUIStop = { link = "CriticalI" },
 	DapUIStopNC = { link = "CriticalI" },
 	DapUIWatchesEmpty = { link = "CriticalI" },
@@ -153,7 +149,6 @@ local colors = {
 	TelescopeSelection = { link = "Highlight" },
 	Visual = { link = "Highlight" },
 	VisualNOS = { link = "Highlight" },
-	IndentBlanklineIndentContext = { fg = "#EDF0F2" },
 	Italic = { fg = "#B0BEC4" },
 	NavicText = { fg = "#36464E", bg = "#EDF0F2" },
 	NavicIcons = { link = "NavicText" },
@@ -164,7 +159,9 @@ local colors = {
 	NeogitDiffDeleteHighlight = { link = "DiffDelete" },
 	None = { fg = "#36464E" },
 	EndOfBuffer = { link = "None" },
-	IndentBlanklineIndent = { link = "None" },
+	IblIndent = { link = "None" },
+	IblWhitespace = { link = "None" },
+	IblScope = { link = "SubtleI" },
 	TabLineFill = { link = "None" },
 	VertSplit = { link = "None" },
 	Number = { fg = "#FF6A00" },
@@ -185,7 +182,7 @@ local colors = {
 	SpecialChar = { link = "Popout" },
 	fugitiveCount = { link = "Popout" },
 	netrwSymlink = { link = "Popout" },
-	PopoutI = { fg = "#FFFFFF", bg = "#FFA98F" },
+	PopoutI = { fg = "#FFFFFF", bg = "#FFA98F", bold = true },
 	IncSearch = { link = "PopoutI" },
 	OrgAgendaScheduledPast = { link = "PopoutI" },
 	Search = { link = "PopoutI" },
@@ -243,6 +240,7 @@ local colors = {
 	StatusComponentBase = { fg = "#36464E", bg = "#EDF0F2" },
 	StatusComponentDefault = { link = "StatusComponentBase" },
 	StatusComponentVimInactive = { link = "StatusComponentBase" },
+	StatusComponentSuccess = { fg = "#68BB6C", bg = "#EDF0F2" },
 	StatusComponentFilename = { fg = "#000000", bg = "#EDF0F2" },
 	StatusComponentInactive = { fg = "#B0BEC4", bg = "#EDF0F2" },
 	StatusComponentPosition = { fg = "#FFFFFF", bg = "#B0BEC4" },
@@ -276,7 +274,7 @@ local colors = {
 	NormalFloat = { link = "Subtle" },
 	PmenuSbar = { link = "Subtle" },
 	SubtleI = { fg = "#EDF0F2" },
-	Success = { fg = "#68BB6C" },
+	Success = { fg = "#68BB6C", bg = "None" },
 	DapUIBreakpointsInfo = { link = "Success" },
 	DapUIPlayPause = { link = "Success" },
 	DapUIPlayPauseNC = { link = "Success" },
@@ -300,6 +298,7 @@ local colors = {
 	fugitiveUntrackedHeading = { link = "fugitiveHeading" },
 	netrwMarkFile = {},
 	["@attribute"] = { fg = "#B0BEC4", nocombine = true },
+	["@attribute.builtin.swift"] = { link = "Salient" },
 	["@function"] = { fg = "#36464E", bold = true, nocombine = true },
 	["@text.danger"] = {
 		fg = "#FFFFFF",
@@ -314,6 +313,7 @@ local colors = {
 	["@lsp.type.comment"] = { link = "Comment" },
 	-- help
 	["helpHyperTextEntry"] = { link = "Salient" },
+	["helpHyperTextJump"] = { link = "Salient" },
 	["helpHeader"] = { link = "Strong" },
 	["helpURL"] = { link = "Salient" },
 	["helpSectionDelim"] = { link = "Faded" },
@@ -324,6 +324,11 @@ local colors = {
 	["@property.yaml"] = { link = "Salient" },
 	["@string.json"] = { link = "Default" },
 	["@property.json"] = { link = "Salient" },
+	--
+	["@markup.heading"] = { link = "strong" },
+	["@markup.link"] = { fg = "#673AB6", underline = true },
+	["@punctuation.special"] = { link = "Comment" },
+	["@markup.quote"] = { italic = true },
 }
 
 if not vim.g.termguicolors then
@@ -342,11 +347,11 @@ if not vim.g.termguicolors then
 		colors.DefaultI.ctermbg = "White"
 		colors.DefaultI.ctermfg = "Black"
 	end
-	colors.Highlight.ctermbg = 7
+	colors.Highlight.ctermbg = 8
 	colors.Subtle.ctermbg = 15
 	colors.SubtleI.ctermfg = 15
-	colors.Faded.ctermfg = 8
-	colors.FadedI.ctermbg = 8
+	colors.Faded.ctermfg = 7
+	colors.FadedI.ctermbg = 7
 	colors.Salient.ctermfg = "Magenta"
 	colors.SalientI.ctermfg = 0
 	colors.SalientI.ctermbg = "Magenta"
@@ -357,6 +362,7 @@ if not vim.g.termguicolors then
 	colors.Critical.ctermfg = "Black"
 	colors.CriticalI.ctermfg = "Red"
 	colors.Success.ctermfg = "Green"
+	colors.Success.ctermbg = "None"
 	colors.SuccessI.ctermfg = "Black"
 	colors.SuccessI.ctermbg = "Green"
 	colors.ColorColumn.link = "Subtle"
@@ -387,7 +393,7 @@ if not vim.g.termguicolors then
 	colors.StatusLineNC.ctermbg = colors.FadedI.ctermbg
 	colors.StatusLineNC.ctermfg = colors.Subtle.ctermfg
 
-	colors.StatusComponentBase.ctermfg = colors.Normal.ctermfg
+	colors.StatusComponentBase.ctermfg = colors.Default.ctermfg
 	colors.StatusComponentBase.ctermbg = colors.Highlight.ctermbg
 	colors.StatusComponentDefault.link = "StatusComponentBase"
 	colors.StatusComponentFilename.link = "StatusComponentBase"
@@ -415,8 +421,6 @@ if not vim.g.termguicolors then
 	colors.StatusComponentVimSelect.link = "StatusComponentVimVisual"
 	colors.StatusComponentVimShell.link = "StatusComponentVimNormal"
 	colors.StatusComponentVimTerm.link = "StatusComponentVimNormal"
-
-	colors.IndentBlanklineIndentContext.ctermfg = colors.Subtle.ctermbg
 
 	colors.TelescopeNormal.ctermbg = colors.Subtle.ctermbg
 	colors.TelescopeBorder.ctermbg = colors.Subtle.ctermbg
@@ -464,4 +468,4 @@ vim.cmd [[
     hi CursorLine ctermfg=Black
 ]]
 
--- require "nano.terminal" "light"
+require "nano.terminal" "light"

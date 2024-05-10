@@ -240,6 +240,7 @@ local colors = {
 	StatusComponentBase = { fg = "#ECEFF4", bg = "#394151" },
 	StatusComponentDefault = { link = "StatusComponentBase" },
 	StatusComponentVimInactive = { link = "StatusComponentBase" },
+	StatusComponentSuccess = { fg = "#9FBB86", bg = "#394151" },
 	StatusComponentFilename = { fg = "#FFFFFF", bg = "#394151" },
 	StatusComponentInactive = { fg = "#59657D", bg = "#394151" },
 	StatusComponentPosition = { fg = "#2B303B", bg = "#59657D" },
@@ -297,6 +298,7 @@ local colors = {
 	fugitiveUntrackedHeading = { link = "fugitiveHeading" },
 	netrwMarkFile = {},
 	["@attribute"] = { fg = "#59657D", nocombine = true },
+	["@attribute.builtin.swift"] = { link = "Salient" },
 	["@function"] = { fg = "#ECEFF4", bold = true, nocombine = true },
 	["@text.danger"] = {
 		fg = "#2B303B",
@@ -311,6 +313,7 @@ local colors = {
 	["@lsp.type.comment"] = { link = "Comment" },
 	-- help
 	["helpHyperTextEntry"] = { link = "Salient" },
+	["helpHyperTextJump"] = { link = "Salient" },
 	["helpHeader"] = { link = "Strong" },
 	["helpURL"] = { link = "Salient" },
 	["helpSectionDelim"] = { link = "Faded" },
@@ -321,6 +324,11 @@ local colors = {
 	["@property.yaml"] = { link = "Salient" },
 	["@string.json"] = { link = "Default" },
 	["@property.json"] = { link = "Salient" },
+	--
+	["@markup.heading"] = { link = "strong" },
+	["@markup.link"] = { fg = "#81A1C1", underline = true },
+	["@punctuation.special"] = { link = "Comment" },
+	["@markup.quote"] = { italic = true },
 }
 
 if not vim.g.termguicolors then
