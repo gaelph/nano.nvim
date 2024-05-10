@@ -52,7 +52,12 @@ return {
 	},
 	StatusComponentVimReplace = { link = "StatusComponentVimInsert" },
 	StatusComponentVimSelect = { link = "StatusComponentVimVisual" },
-	StatusComponentSuccess = { fg = faces.success.fg, bg = faces.highlight.bg },
+	StatusComponentSuccess = {
+		fg = faces.success.fg,
+		ctermfg = faces.success.ctermfg,
+		bg = faces.highlight.bg,
+		ctermbg = faces.highlight.ctermbg,
+	},
 	StatusComponentVimShell = { link = "StatusComponentVimNormal" },
 	StatusComponentVimTerm = { link = "StatusComponentVimNormal" },
 	StatusComponentVimVReplace = { link = "StatusComponentVimReplace" },

@@ -1,6 +1,3 @@
-local lush = require "lush"
-local hsl = lush.hsl
-
 local clrs = {
 	nord0 = "#2b303b", --Background
 	nord1 = "#2f3541", --Darker Gray

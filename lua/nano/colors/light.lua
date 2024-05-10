@@ -26,15 +26,16 @@ local M = {
 	color_14 = "#b0bec5", -- Bright SkyBlue
 	color_15 = "#fafafa", -- Bright White
 	cterm = {
-		fg = 238,
+		fg = 0,
 		bg = 231,
 		subtle = 15,
-		critical = 202,
-		salient = 97,
-		strong = 16,
-		popout = 216,
-		highlight = 254,
-		faded = 248,
+		critical = 1,
+		salient = 5,
+		strong = 0,
+		popout = 3,
+		highlight = 8,
+		faded = 7,
+		success = 2,
 	},
 }
 
