@@ -12,6 +12,7 @@ local Treesitter = require "nano.better.treesitter"
 local Diff = require "nano.better.diff"
 local Diagnostics = require "nano.better.diagnostics"
 local Lsp = require "nano.better.lsp"
+local Help = require "nano.better.help"
 local ConflictMarker = require "nano.better.plugins.conflict_marker"
 local DapUI = require "nano.better.plugins.dap_ui"
 local Fugitive = require "nano.better.plugins.fugitive"
@@ -30,6 +31,7 @@ local colors = vim.tbl_extend(
 	Base, --
 	Syntax, --
 	VimUI, --
+	Help, --
 	Treesitter, --
 	Diff, --
 	Diagnostics, --

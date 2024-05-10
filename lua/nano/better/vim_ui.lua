@@ -42,7 +42,7 @@ return {
 	--
 	FoldColumn = {
 		fg = faces.faded.fg,
-		bg = faces.normal.fg,
+		bg = faces.normal.bg,
 		ctermfg = faces.subtle.ctermbg,
 		ctermbg = faces.subtle.ctermbg,
 	},
