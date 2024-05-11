@@ -80,10 +80,14 @@ for group, attrs in pairs(colors) do
 end
 
 -- some fixes for unwanted colors in the StatusLine
--- and underline in diff on cursorline
 vim.cmd [[
 		hi! StatusLine cterm=NONE gui=NONE
 		hi! StatusLineNC cterm=NONE gui=NONE
 		hi! link StatusLine None
-    " hi CursorLine ctermfg=Black
 ]]
+
+-- if using termguicolors,
+-- fixes underline in diffs
+if vim.o.termguicolors then
+	vim.cmd "hi CursorLine ctermfg=Black"
+end
