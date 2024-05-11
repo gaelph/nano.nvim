@@ -1,5 +1,5 @@
 return {
 	LspReferenceRead = { link = "Highlight" },
-	LspReferenceText = { link = "Normal" },
-	LspReferenceWrite = { link = "Normal" },
+	LspReferenceText = { link = "Highlight" },
+	LspReferenceWrite = { link = "Highlight" },
 }

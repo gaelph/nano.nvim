@@ -23,7 +23,8 @@ return {
 	CursorColumn = { link = "Subtle" },
 	CursorLine = {
 		bg = faces.subtle.bg,
-		ctermbg = faces.subtle.ctermbg,
+		-- ctermbg = faces.subtle.ctermbg,
+		ctermbg = "None",
 		sp = "NONE",
 	},
 	--
