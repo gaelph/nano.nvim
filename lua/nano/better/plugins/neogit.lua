@@ -7,10 +7,30 @@ return {
 		bold = true,
 		italic = true,
 	},
-	NeogitDiffAdd = {},
+	NeogitChangeAdded = {
+		fg = faces.salient.fg,
+		ctermfg = faces.salient.ctermfg,
+		bold = true,
+		italic = true,
+	},
+	--
+	NeogitCursorLine = {
+		bg = faces.subtle.fg,
+		ctermbg = faces.subtle.ctermfg,
+	},
+	--
+	NeogitDiffContext = { bg = faces.subtle.bg, ctermbg = faces.subtle.ctermbg },
+	NeogitDiffContextHighlight = { link = "NeogitDiffContext" },
+	NeogitDiffAdd = { link = "DiffAdd" },
 	NeogitDiffAddHighlight = { link = "DiffAdd" },
-	NeogitDiffDelete = {},
+	NeogitDiffDelete = { link = "DiffDelete" },
 	NeogitDiffDeleteHighlight = { link = "DiffDelete" },
+	--
+	NeogitGraphAuthor = { link = "Comment" },
+	--
+	NeogitCommandCodeNormal = { link = "Comment" },
+	NeogitCommandCodeError = { link = "CriticalI" },
+	--
 	NeogitNotificationError = { link = "CriticalI" },
 	NeogitNotificationInfo = { link = "Salient" },
 	NeogitNotificationWarning = { link = "Popout" },
