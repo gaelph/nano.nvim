@@ -87,7 +87,7 @@ vim.api.nvim_create_autocmd("FileType", {
 			scope = "local",
 			win = 0,
 		})
-		vim.cmd [[resize 10]]
+		vim.cmd [[resize 14]]
 		vim.cmd [[wincmd J]]
 	end,
 })
