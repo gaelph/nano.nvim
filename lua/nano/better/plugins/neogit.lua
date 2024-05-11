@@ -18,6 +18,10 @@ return {
 		bg = faces.subtle.fg,
 		ctermbg = faces.subtle.ctermfg,
 	},
+	DiffviewCursorLine = {
+		bg = faces.subtle.fg,
+		ctermbg = faces.subtle.ctermfg,
+	},
 	--
 	NeogitDiffContext = { bg = faces.subtle.bg, ctermbg = faces.subtle.ctermbg },
 	NeogitDiffContextHighlight = { link = "NeogitDiffContext" },
