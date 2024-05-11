@@ -12,12 +12,6 @@ return {
 		faces.normal.ctermfg,
 	},
 	iCursor = { link = "Cursor" },
-	CursorLineNr = {
-		fg = faces.faded.fg,
-		bg = faces.subtle.bg,
-		ctermfg = faces.faded.ctermfg,
-		ctermbg = faces.subtle.ctermbg,
-	},
 	--
 	ColorColumn = { link = "Subtle" },
 	CursorColumn = { link = "Subtle" },
@@ -26,6 +20,19 @@ return {
 		-- ctermbg = faces.subtle.ctermbg,
 		ctermbg = "None",
 		sp = "NONE",
+	},
+	CursorLineNr = {
+		fg = faces.faded.fg,
+		bg = faces.subtle.bg,
+		ctermfg = faces.faded.ctermfg,
+		ctermbg = faces.subtle.ctermbg,
+	},
+	CursorLineFold = {
+		bg = faces.subtle.bg,
+		ctermbg = faces.subtle.ctermbg,
+	},
+	CursorLineSign = {
+		link = "CursorLineFold",
 	},
 	--
 	Error = { link = "Critical" },
