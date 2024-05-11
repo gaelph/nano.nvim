@@ -6,5 +6,5 @@ return {
 	["helpURL"] = { link = "Salient" },
 	["helpSectionDelim"] = { link = "Faded" },
 	["helpCommand"] = { link = "Strong" },
-	["helpExample"] = { fg = faces.normal.fg, bg = "NONE", italic = true },
+	["helpExample"] = { fg = faces.faded.fg, bg = "NONE", italic = true },
 }
