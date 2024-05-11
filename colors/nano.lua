@@ -79,19 +79,6 @@ for group, attrs in pairs(colors) do
 	end, 0, group, attrs)
 end
 
-vim.api.nvim_create_autocmd("FileType", {
-	group = Utils.autogroup,
-	pattern = "qf",
-	callback = function()
-		vim.api.nvim_set_option_value("winhighlight", "Normal:Subtle", {
-			scope = "local",
-			win = 0,
-		})
-		vim.cmd [[resize 14]]
-		vim.cmd [[wincmd J]]
-	end,
-})
-
 -- some fixes for unwanted colors in the StatusLine
 -- and underline in diff on cursorline
 vim.cmd [[
