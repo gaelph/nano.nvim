@@ -26,28 +26,28 @@ local StatusLine = require "nano.better.plugins.statusline"
 local Telescope = require "nano.better.plugins.telescope"
 
 local colors = vim.tbl_extend(
-	"keep", --
+	"keep",
 	--
-	Base, --
-	Syntax, --
-	VimUI, --
-	Help, --
-	Treesitter, --
-	Diff, --
-	Diagnostics, --
-	Lsp, --
+	Base(vim.o.background),
+	Syntax(vim.o.background),
+	VimUI(vim.o.background),
+	Help(vim.o.background),
+	Treesitter(vim.o.background),
+	Diff(vim.o.background),
+	Diagnostics(vim.o.background),
+	Lsp(vim.o.background),
 	-- Plugins
-	ConflictMarker,
-	DapUI,
-	Fugitive,
-	GitSigns,
-	IndentBlankLine,
-	Navic,
-	Neogit,
-	Notify,
-	Orgmode,
-	StatusLine,
-	Telescope
+	ConflictMarker(vim.o.background),
+	DapUI(vim.o.background),
+	Fugitive(vim.o.background),
+	GitSigns(vim.o.background),
+	IndentBlankLine(vim.o.background),
+	Navic(vim.o.background),
+	Neogit(vim.o.background),
+	Notify(vim.o.background),
+	Orgmode(vim.o.background),
+	StatusLine(vim.o.background),
+	Telescope(vim.o.background)
 )
 
 -- colorschemes generally want to do this
@@ -57,8 +57,7 @@ local TERM = os.getenv "TERM"
 if TERM == "xterm-kitty" or TERM == "wezterm" then
 	vim.cmd "let &t_ut=''"
 end
--- vim.o.background = "light"
-vim.cmd "let g:colors_name='nano_better'"
+vim.cmd "let g:colors_name='nano'"
 
 -- clear @lsp highlights
 for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
@@ -91,3 +90,16 @@ vim.cmd [[
 if vim.o.termguicolors then
 	vim.cmd "hi CursorLine ctermfg=Black"
 end
+
+vim.api.nvim_create_autocmd("OptionSet", {
+	pattern = { "termguicolors" },
+	callback = function()
+		if vim.o.termguicolors then
+			vim.cmd "hi CursorLine ctermfg=Black"
+		elseif vim.o.background == "dark" then
+			vim.cmd "hi CursorLine ctermfg=None ctermbg=0"
+		elseif vim.o.background == "light" then
+			vim.cmd "hi CursorLine ctermfg=None ctermbg=15"
+		end
+	end,
+})

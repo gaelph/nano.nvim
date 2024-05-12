@@ -47,14 +47,15 @@ local M = {
 	color_15 = clrs.nord6, -- Bright White
 	cterm = {
 		fg = 231, -- white
-		bg = 235,
-		subtle = 237,
-		critical = 167,
-		salient = 110,
+		bg = "None",
+		subtle = 0,
+		critical = 1,
+		salient = 5,
 		strong = 231,
-		popout = 173,
-		highlight = 238,
-		faded = 241,
+		popout = 3,
+		highlight = 8,
+		faded = 7,
+		success = 2,
 	},
 }
 
