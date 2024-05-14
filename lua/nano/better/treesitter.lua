@@ -50,11 +50,21 @@ return function(variant)
 			ctermfg = faces.popout.ctermfg,
 			bold = true,
 		},
+		["@comment.danger"] = { link = "CriticalI" },
+		["@comment.mark"] = { fg = faces.normal.fg, italic = true },
+		["@comment.note"] = { link = "Bold" },
+		["@comment.todo"] = { link = "Bold" },
+		["@comment.warning"] = {
+			fg = faces.popout.fg,
+			ctermfg = faces.popout.ctermfg,
+			bold = true,
+		},
 		-- markup (markdown, org, vimdoc)
 		["@markup.heading"] = { link = "strong" },
 		["@markup.link"] = { fg = faces.salient.fg, underline = true },
 		["@string.special.url"] = { link = "@markup.link" },
 		["@punctuation.special"] = { link = "Comment" },
 		["@markup.quote"] = { italic = true },
+		["@markup.raw.block.vimdoc"] = { link = "Comment" },
 	}
 end
