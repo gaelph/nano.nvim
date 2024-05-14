@@ -8,6 +8,7 @@ return function(variant)
 			nocombine = true,
 		},
 		["@attribute.builtin.swift"] = { link = "Salient" },
+		["@attribute.css"] = { link = "Normal" },
 		["@comment.documentation.javascript"] = { link = "Faded" },
 		["@comment.documentation.lua"] = { link = "Faded" },
 		["@function"] = {
