@@ -2,6 +2,7 @@ return function(variant)
 	local faces = require "nano.better.palette"(variant).faces
 
 	return {
+		MsgArea = { link = "Normal" },
 		Conceal = {},
 		EndOfBuffer = { link = "None" },
 		NonText = { link = "Default" },
@@ -19,7 +20,7 @@ return function(variant)
 		CursorLine = {
 			bg = faces.subtle.bg,
 			-- ctermbg = faces.subtle.ctermbg,
-			ctermbg = "None",
+			ctermbg = 15,
 			sp = "NONE",
 		},
 		CursorLineNr = {

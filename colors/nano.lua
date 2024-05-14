@@ -66,6 +66,13 @@ end
 
 -- apply highlight groups
 for group, attrs in pairs(colors) do
+	-- if using termguicolors,
+	-- fixes underline in diffs
+	if group == "CursorLine" and vim.o.termguicolors then
+		attrs.ctermbg = "None"
+		attrs.ctermfg = "None"
+	end
+
 	xpcall(vim.api.nvim_set_hl, function(err)
 		print(
 			string.format(
@@ -85,21 +92,15 @@ vim.cmd [[
 		hi! link StatusLine None
 ]]
 
--- if using termguicolors,
--- fixes underline in diffs
-if vim.o.termguicolors then
-	vim.cmd "hi CursorLine ctermfg=Black"
-end
-
 vim.api.nvim_create_autocmd("OptionSet", {
 	pattern = { "termguicolors" },
 	callback = function()
 		if vim.o.termguicolors then
-			vim.cmd "hi CursorLine ctermfg=Black"
+			vim.cmd "hi CursorLine ctermfg=Black ctermbg=None"
 		elseif vim.o.background == "dark" then
-			vim.cmd "hi CursorLine ctermfg=None ctermbg=0"
-		elseif vim.o.background == "light" then
 			vim.cmd "hi CursorLine ctermfg=None ctermbg=15"
+		elseif vim.o.background == "light" then
+			vim.cmd "hi CursorLine ctermfg=None ctermbg=0"
 		end
 	end,
 })
