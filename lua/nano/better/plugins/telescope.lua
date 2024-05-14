@@ -23,5 +23,7 @@ return function(variant)
 		TelescopeResultsBorder = { link = "TelescopeBorder" },
 		TelescopeSelection = { link = "Highlight" },
 		TelescopeSelectionCaret = { link = "Salient" },
+		--
+		TelescopeQueryFilter = { link = "Faded" },
 	}
 end
