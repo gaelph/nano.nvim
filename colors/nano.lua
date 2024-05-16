@@ -88,7 +88,7 @@ end
 -- some fixes for unwanted colors in the StatusLine
 vim.cmd [[
 		hi! StatusLine cterm=NONE gui=NONE
-		hi! StatusLineNC cterm=NONE gui=NONE
+		hi! link StatusLineNC None
 		hi! link StatusLine None
 ]]
 
