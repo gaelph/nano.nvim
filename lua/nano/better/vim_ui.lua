@@ -49,6 +49,10 @@ return function(variant)
 			ctermfg = faces.subtle.ctermbg,
 			ctermbg = faces.subtle.ctermbg,
 		},
+		NormalFloat = { link = "Subtle" },
+		--
+		Winbar = { link = "Normal" },
+		WinbarNC = { link = "Faded" },
 		--
 		FoldColumn = {
 			fg = faces.faded.fg,
@@ -60,13 +64,13 @@ return function(variant)
 		--
 		IncSearch = { link = "PopoutI" },
 		Search = { link = "PopoutI" },
+		CurSearch = { link = "Critical" },
 		--
 		LineNr = { link = "Faded" },
 		SignColumn = { link = "Normal" },
 		--
 		MatchParen = { link = "Strong" },
 		--
-		NormalFloat = { link = "Subtle" },
 		--
 		Pmenu = { bg = faces.subtle.bg, ctermbg = faces.subtle.ctermbg },
 		PmenuSbar = { link = "Subtle" },
@@ -84,6 +88,7 @@ return function(variant)
 		SpellRare = { sp = faces.normal.fg, undercurl = true },
 		--
 		VertSplit = { link = "None" },
+		WinSeparator = { link = "None" },
 		--
 		Visual = { link = "Highlight" },
 		VisualNOS = { link = "Highlight" },
