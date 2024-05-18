@@ -27,8 +27,10 @@ return function(variant)
 		NeogitDiffContext = { bg = faces.subtle.bg, ctermbg = faces.subtle.ctermbg },
 		NeogitDiffContextHighlight = { link = "NeogitDiffContext" },
 		NeogitDiffAdd = { link = "DiffAdd" },
+		NeogitDiffAddCursor = { link = "DiffAdd" },
 		NeogitDiffAddHighlight = { link = "DiffAdd" },
 		NeogitDiffDelete = { link = "DiffDelete" },
+		NeogitDiffDeleteCursor = { link = "DiffAdd" },
 		NeogitDiffDeleteHighlight = { link = "DiffDelete" },
 		--
 		NeogitGraphAuthor = { link = "Comment" },
