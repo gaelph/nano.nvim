@@ -17,6 +17,12 @@ return function(variant)
 		["@property"] = { link = "Default" },
 		["@lsp.type.comment"] = { link = "Comment" },
 		-- MARK: - Languages -----------------------------------------------------
+		["@variable"] = { link = "Default" },
+		["@constant.builtin"] = { link = "@constant" },
+		["@module.builtin"] = { link = "@module" },
+		["@type.builtin"] = { link = "@type" },
+		["@attribute.builtin"] = { link = "@attribute" },
+		["@function.builtin"] = { link = "@function.builtin" },
 		-- CSS
 		["@attribute.css"] = { link = "Normal" },
 		-- JAVASCRIPT
@@ -41,6 +47,8 @@ return function(variant)
 		["@tag.attribute"] = { link = "Default" },
 		["@tag.delimiter"] = { link = "Faded" },
 		["@tag.builtin"] = { link = "Strong" },
+		-- Python
+		["@string.documentation"] = { link = "Comment" },
 		-- comment notes
 		["@text.danger"] = { link = "CriticalI" },
 		["@text.mark"] = { fg = faces.normal.fg, italic = true },
