@@ -40,6 +40,7 @@ return function(variant)
 		["@tag"] = { link = "Bold" },
 		["@tag.attribute"] = { link = "Default" },
 		["@tag.delimiter"] = { link = "Faded" },
+		["@tag.builtin"] = { link = "Strong" },
 		-- comment notes
 		["@text.danger"] = { link = "CriticalI" },
 		["@text.mark"] = { fg = faces.normal.fg, italic = true },
