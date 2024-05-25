@@ -25,5 +25,12 @@ return function(variant)
 		TelescopeSelectionCaret = { link = "Salient" },
 		--
 		TelescopeQueryFilter = { link = "Faded" },
+		TelescopeBufferLoaded = {
+			fg = faces.normal.fg,
+			bg = "none",
+			ctermfg = faces.normal.ctermfg,
+			ctermbg = "none",
+			italic = true,
+		},
 	}
 end
