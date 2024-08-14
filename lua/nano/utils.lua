@@ -2,7 +2,13 @@ local Utils = {}
 
 function Utils.auto_term_gui_colors()
 	local TERM = os.getenv "TERM"
-	if TERM ~= nil and TERM ~= "xterm-kitty" and vim.startswith(TERM, "xterm") then
+	local TERM_PROGRAM = os.getenv "TERM_PROGRAM"
+	if
+		TERM ~= nil
+		and TERM ~= "xterm-kitty"
+		and vim.startswith(TERM, "xterm")
+		and TERM_PROGRAM ~= "WezTerm"
+	then
 		vim.o.termguicolors = false
 	else
 		vim.o.termguicolors = true
