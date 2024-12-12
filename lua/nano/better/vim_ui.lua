@@ -5,7 +5,7 @@ return function(variant)
 		MsgArea = { link = "Normal" },
 		Conceal = {},
 		EndOfBuffer = { link = "None" },
-		NonText = { link = "Default" },
+		NonText = { link = "Faded" },
 		--
 		Cursor = {
 			fg = faces.normal.bg,

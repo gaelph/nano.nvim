@@ -23,6 +23,9 @@ return function(variant)
 			bg = faces.subtle.fg,
 			ctermbg = faces.subtle.ctermfg,
 		},
+		DiffviewFilePanelFileName = {
+			link = "Default",
+		},
 		--
 		NeogitDiffContext = { bg = faces.subtle.bg, ctermbg = faces.subtle.ctermbg },
 		NeogitDiffContextHighlight = { link = "NeogitDiffContext" },

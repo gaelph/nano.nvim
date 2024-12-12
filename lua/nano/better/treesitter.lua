@@ -35,6 +35,7 @@ return function(variant)
 		["@lsp.typemod.keyword.documentation.lua"] = { link = "Salient" },
 		-- SWIFT
 		["@attribute.builtin.swift"] = { link = "Salient" },
+		["@lsp.type.keyword.swift"] = { link = "Salient" },
 		-- MARK: - Non-Languages -------------------------------------------------
 		-- JSON
 		["@property.json"] = { link = "Salient" },

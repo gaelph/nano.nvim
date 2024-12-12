@@ -2,8 +2,8 @@
 local Utils = require "nano.utils"
 Utils.auto_term_gui_colors()
 
-vim.highlight.priorities.semantic_tokens = 99
-vim.highlight.priorities.treesitter = 120
+-- vim.highlight.priorities.semantic_tokens = 99
+-- vim.highlight.priorities.treesitter = 120
 
 local Base = require "nano.better.base"
 local Syntax = require "nano.better.syntax"
@@ -24,6 +24,7 @@ local Notify = require "nano.better.plugins.notify"
 local Orgmode = require "nano.better.plugins.orgmode"
 local StatusLine = require "nano.better.plugins.statusline"
 local Telescope = require "nano.better.plugins.telescope"
+local MultiCursor = require "nano.better.plugins.multicursor"
 
 local colors = vim.tbl_extend(
 	"keep",
@@ -47,7 +48,8 @@ local colors = vim.tbl_extend(
 	Notify(vim.o.background),
 	Orgmode(vim.o.background),
 	StatusLine(vim.o.background),
-	Telescope(vim.o.background)
+	Telescope(vim.o.background),
+	MultiCursor(vim.o.background)
 )
 
 -- colorschemes generally want to do this
@@ -92,15 +94,21 @@ vim.cmd [[
 		hi! link StatusLine None
 ]]
 
+local function fix_cursorline()
+	if vim.o.termguicolors then
+		vim.cmd "hi CursorLine ctermfg=Black ctermbg=None"
+	elseif vim.o.background == "dark" then
+		vim.cmd "hi CursorLine ctermfg=None ctermbg=15"
+	elseif vim.o.background == "light" then
+		vim.cmd "hi CursorLine ctermfg=None ctermbg=0"
+	end
+end
+
 vim.api.nvim_create_autocmd("OptionSet", {
 	pattern = { "termguicolors" },
 	callback = function()
-		if vim.o.termguicolors then
-			vim.cmd "hi CursorLine ctermfg=Black ctermbg=None"
-		elseif vim.o.background == "dark" then
-			vim.cmd "hi CursorLine ctermfg=None ctermbg=15"
-		elseif vim.o.background == "light" then
-			vim.cmd "hi CursorLine ctermfg=None ctermbg=0"
-		end
+		fix_cursorline()
 	end,
 })
+
+fix_cursorline()

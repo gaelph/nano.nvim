@@ -1,13 +1,35 @@
 return function(variant)
 	local faces = require "nano.better.palette"(variant).faces
 	return {
-		NavicIcons = { link = "NavicText" },
-		NavicSeparator = { link = "NavicText" },
-		NavicText = {
-			fg = faces.normal.fg,
-			ctermfg = faces.normal.ctermfg,
-			bg = faces.highlight.fg,
-			ctermbg = faces.highlight.ctermfg,
-		},
+		NavicIconsFile = { link = "Salient" },
+		NavicIconsModule = { link = "Salient" },
+		NavicIconsNamespace = { link = "Salient" },
+		NavicIconsPackage = { link = "Salient" },
+		NavicIconsClass = { link = "Salient" },
+		NavicIconsMethod = { link = "Salient" },
+		NavicIconsProperty = { link = "Salient" },
+		NavicIconsField = { link = "Salient" },
+		NavicIconsConstructor = { link = "Salient" },
+		NavicIconsEnum = { link = "Salient" },
+		NavicIconsInterface = { link = "Salient" },
+		NavicIconsFunction = { link = "Salient" },
+		NavicIconsVariable = { link = "Salient" },
+		NavicIconsConstant = { link = "Salient" },
+		NavicIconsString = { link = "Salient" },
+		NavicIconsNumber = { link = "Salient" },
+		NavicIconsBoolean = { link = "Salient" },
+		NavicIconsArray = { link = "Salient" },
+		NavicIconsObject = { link = "Salient" },
+		NavicIconsKey = { link = "Salient" },
+		NavicIconsNull = { link = "Salient" },
+		NavicIconsEnumMember = { link = "Salient" },
+		NavicIconsStruct = { link = "Salient" },
+		NavicIconsEvent = { link = "Salient" },
+		NavicIconsOperator = { link = "Salient" },
+		NavicIconsTypeParameter = { link = "Salient" },
+
+		NavicIcons = { link = "Salient" },
+		NavicSeparator = { link = "Faded" },
+		NavicText = { link = "Faded" },
 	}
 end

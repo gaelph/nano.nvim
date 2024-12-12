@@ -10,5 +10,6 @@ return function(variant)
 			ctermfg = faces.faded.ctermfg,
 			ctermbg = faces.subtle.ctermbg,
 		},
+		---
 	}
 end
