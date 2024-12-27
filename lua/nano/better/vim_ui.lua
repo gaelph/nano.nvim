@@ -51,8 +51,8 @@ return function(variant)
 		},
 		NormalFloat = { link = "Subtle" },
 		--
-		Winbar = { link = "Normal" },
-		WinbarNC = { link = "Faded" },
+		WinBar = { fg = faces.normal.fg, bg = faces.subtle.bg },
+		WinBarNC = { fg = faces.faded.fg, bg = faces.subtle.bg },
 		--
 		FoldColumn = {
 			fg = faces.faded.fg,
@@ -87,8 +87,8 @@ return function(variant)
 		SpellLocal = { sp = faces.normal.fg, undercurl = true },
 		SpellRare = { sp = faces.normal.fg, undercurl = true },
 		--
-		VertSplit = { link = "None" },
-		WinSeparator = { link = "None" },
+		VertSplit = { link = "SubtleI" },
+		WinSeparator = { link = "SubtleI" },
 		--
 		Visual = { link = "Highlight" },
 		VisualNOS = { link = "Highlight" },
