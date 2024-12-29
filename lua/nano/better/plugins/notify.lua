@@ -1,5 +1,7 @@
 return function(variant)
+	local faces = require "nano.better.palette"(variant).faces
 	return {
+		NotifyBackground = { bg = faces.normal.bg },
 		NotifyDEBUGBody = { link = "Normal" },
 		NotifyDEBUGBorder = { link = "Faded" },
 		NotifyDEBUGIcon = { link = "Faded" },
