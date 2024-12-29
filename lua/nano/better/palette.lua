@@ -21,8 +21,8 @@ return function(variant)
 
 	M.faces = {
 		none = {
-			bg = 0,
-			fg = 15,
+			bg = 15,
+			fg = 0,
 			ctermbg = M.colors.cterm.bg,
 			ctermfg = M.colors.cterm.bg,
 		},

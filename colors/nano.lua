@@ -98,9 +98,9 @@ local function fix_cursorline()
 	if vim.o.termguicolors then
 		vim.cmd "hi CursorLine ctermfg=Black ctermbg=None"
 	elseif vim.o.background == "dark" then
-		vim.cmd "hi CursorLine ctermfg=None ctermbg=15"
-	elseif vim.o.background == "light" then
 		vim.cmd "hi CursorLine ctermfg=None ctermbg=0"
+	elseif vim.o.background == "light" then
+		vim.cmd "hi CursorLine ctermfg=None ctermbg=15"
 	end
 end
 
