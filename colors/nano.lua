@@ -25,6 +25,7 @@ local Orgmode = require "nano.better.plugins.orgmode"
 local StatusLine = require "nano.better.plugins.statusline"
 local Telescope = require "nano.better.plugins.telescope"
 local MultiCursor = require "nano.better.plugins.multicursor"
+local Avante = require "nano.better.plugins.avante"
 
 local colors = vim.tbl_extend(
 	"keep",
@@ -49,7 +50,8 @@ local colors = vim.tbl_extend(
 	Orgmode(vim.o.background),
 	StatusLine(vim.o.background),
 	Telescope(vim.o.background),
-	MultiCursor(vim.o.background)
+	MultiCursor(vim.o.background),
+	Avante(vim.o.background)
 )
 
 -- colorschemes generally want to do this
