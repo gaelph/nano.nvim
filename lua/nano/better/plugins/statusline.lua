@@ -27,6 +27,18 @@ return function(variant)
 			ctermfg = "White",
 			ctermbg = faces.faded.ctermfg,
 		},
+		StatusComponentWarning = {
+			fg = faces.popout.fg,
+			ctermfg = faces.popout.ctermfg,
+			bg = faces.highlight.bg,
+			ctermbg = faces.highlight.ctermbg,
+		},
+		StatusComponentError = {
+			fg = faces.critical.bg,
+			ctermfg = faces.critical.ctermbg,
+			bg = faces.highlight.bg,
+			ctermbg = faces.highlight.ctermbg,
+		},
 		StatusComponentVimBlock = { link = "StatusComponentVimVisual" },
 		StatusComponentVimCommand = { link = "StatusComponentVimInsert" },
 		StatusComponentVimEnter = { link = "StatusComponentVimNormal" },
