@@ -1,3 +1,7 @@
+---@module "nano.types"
+
+---@param variant Variant
+---@return table<string, Highlight>
 return function(variant)
 	local faces = require "nano.better.palette"(variant).faces
 

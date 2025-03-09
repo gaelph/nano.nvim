@@ -1,3 +1,5 @@
+---@param variant Variant
+---@return table<string, Highlight>
 return function(variant)
 	if variant == "light" then
 		return {

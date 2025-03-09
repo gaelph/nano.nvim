@@ -1,5 +1,24 @@
 {
-    "diagnostics.disable": [
-        "undefined-global"
-    ]
+  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+  "Lua.workspace.library": [
+    "${workspaceFolder}/lua",
+    "${workspaceFolder}/colors",
+    "$VIMRUNTIME/lua",
+    "$VIMRUNTIME/lua/vim/lsp"
+  ],
+  "Lua.workspace.checkThirdParty": false,
+  "Lua.runtime.version": "LuaJIT",
+  "Lua.completion.callSnippet": "Replace",
+  "Lua.completion.keywordSnippet": "Replace",
+  "Lua.telemetry.enable": false,
+  "Lua.workspace.preloadFileSize": 1000,
+  "Lua.workspace.maxPreload": 2000,
+  "Lua.type.weakUnionCheck": true,
+  "Lua.type.weakNilCheck": true,
+  "Lua.diagnostics.disable": [],
+  "Lua.hint.enable": true,
+  "Lua.hint.setType": true,
+  "Lua.hint.paramType": true,
+  "Lua.hint.paramName": "All"
 }
+

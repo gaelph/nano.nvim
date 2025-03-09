@@ -1,4 +1,8 @@
-return function(variant)
+---@module "nano.types"
+
+---@param variant Variant
+---@return table<string, Highlight>
+local function Base(variant)
 	local faces = require "nano.better.palette"(variant).faces
 
 	local LightBase = {
@@ -67,3 +71,5 @@ return function(variant)
 
 	return vim.o.background == "light" and LightBase or DarkBase
 end
+
+return Base --[[@as Plugin ]]

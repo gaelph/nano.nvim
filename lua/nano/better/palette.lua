@@ -1,6 +1,8 @@
-local dark = require "nano.colors.dark"
-local light = require "nano.colors.light"
+local dark = require "nano.colors.dark" --[[@as Colors ]]
+local light = require "nano.colors.light" --[[@as Colors ]]
 
+---@paarm variant Variant
+---@returns {faces: Faces, colors: Colors}
 return function(variant)
 	local M = {}
 
@@ -134,7 +136,7 @@ return function(variant)
 			ctermbg = M.colors.cterm.success,
 			ctermfg = M.colors.cterm.bg,
 		},
-	}
+	} --[[@as Faces ]]
 
 	return M
 end

@@ -1,3 +1,5 @@
+---@module "nano.types"
+
 -- colors/colorscheme.lua
 local Utils = require "nano.utils"
 Utils.auto_term_gui_colors()
@@ -27,6 +29,7 @@ local Telescope = require "nano.better.plugins.telescope"
 local MultiCursor = require "nano.better.plugins.multicursor"
 local Avante = require "nano.better.plugins.avante"
 
+---@type table<string, Highlight>
 local colors = vim.tbl_extend(
 	"keep",
 	--

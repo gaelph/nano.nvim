@@ -1,3 +1,6 @@
+---@class Utils
+---@field ns number|string
+---@field autogroup number|string
 local Utils = {}
 
 function Utils.auto_term_gui_colors()

@@ -1,4 +1,3 @@
--- What
 return function(variant)
 	if variant == "light" then
 		return {
