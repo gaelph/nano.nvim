@@ -1,19 +1,9 @@
-return function(variant)
-	if variant == "light" then
-		return {
-			ConflictMarkerBegin = { bg = "#E3E8E3" },
-			ConflictMarkerCommonAncestorsHunk = { bg = "#F5F1EF" },
-			ConflictMarkerEnd = { bg = "#DDDAE2" },
-			ConflictMarkerOurs = { bg = "#E3E8E3" },
-			ConflictMarkerTheirs = { bg = "#DDDAE2" },
-		}
-	end
-
+return function(_variant)
 	return {
-		ConflictMarkerBegin = { bg = "#455254" },
-		ConflictMarkerCommonAncestorsHunk = { bg = "#504950" },
-		ConflictMarkerEnd = { bg = "#3D495C" },
-		ConflictMarkerOurs = { bg = "#455254" },
-		ConflictMarkerTheirs = { bg = "#3D495C" },
+		ConflictMarkerBegin = { link = "DiffChange" },
+		ConflictMarkerCommonAncestorsHunk = { link = "DiffAdd" },
+		ConflictMarkerEnd = { link = "DiffAdd" },
+		ConflictMarkerOurs = { link = "DiffText" },
+		ConflictMarkerTheirs = { link = "DiffAdd" },
 	}
 end
