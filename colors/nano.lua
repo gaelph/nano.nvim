@@ -28,6 +28,7 @@ local StatusLine = require "nano.better.plugins.statusline"
 local Telescope = require "nano.better.plugins.telescope"
 local MultiCursor = require "nano.better.plugins.multicursor"
 local Avante = require "nano.better.plugins.avante"
+local MCPHub = require "nano.better.plugins.mcphub"
 
 ---@type table<string, Highlight>
 local colors = vim.tbl_extend(
@@ -54,7 +55,8 @@ local colors = vim.tbl_extend(
 	StatusLine(vim.o.background),
 	Telescope(vim.o.background),
 	MultiCursor(vim.o.background),
-	Avante(vim.o.background)
+	Avante(vim.o.background),
+	MCPHub(vim.o.background)
 )
 
 -- colorschemes generally want to do this
