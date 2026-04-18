@@ -7,7 +7,13 @@ return function(variant)
 	return {
 		Boolean = { link = "Default" },
 		Character = { link = "Popout" },
-		Comment = { link = "Faded" },
+		Comment = {
+			fg = faces.faded.fg,
+			ctermfg = faces.faded.ctermfg,
+			bg = faces.faded.bg,
+			ctermbg = faces.faded.ctermbg,
+			-- link = "Faded"
+		},
 		Conditional = { link = "Salient" },
 		Constant = { link = "Strong" },
 		Define = { link = "Salient" },
