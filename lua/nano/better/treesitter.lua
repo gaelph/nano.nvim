@@ -30,6 +30,11 @@ return function(variant)
 		-- JAVASCRIPT
 		["@comment.documentation.javascript"] = { link = "Faded" },
 		["@keyword.jsdoc"] = { link = "Salient" },
+		-- TypeScript
+		["typescriptCall"] = { link = "Default" },
+		["typescriptFuncCallArg"] = { link = "Default" },
+		["typescriptObjectLabel"] = { link = "Default" },
+		["typescriptStatemenKeyword"] = { link = "Salient" },
 		-- LUA
 		["@comment.documentation.lua"] = { link = "Faded" },
 		["@lsp.mod.documentation.lua"] = { link = "Salient" },
@@ -48,7 +53,10 @@ return function(variant)
 		-- XML/HTML/JSX
 		["@tag"] = { link = "Bold" },
 		["@tag.attribute"] = { link = "Default" },
+		["tsxAttrib"] = { link = "Default" },
+		["tsxTag"] = { link = "Faded" },
 		["@tag.delimiter"] = { link = "Faded" },
+		["tsxCloseString"] = { link = "Faded" },
 		["@tag.builtin"] = { link = "Strong" },
 		-- Python
 		["@string.documentation"] = { link = "Comment" },
