@@ -51,7 +51,12 @@ return function(variant)
 			ctermfg = faces.subtle.ctermbg,
 			ctermbg = faces.subtle.ctermbg,
 		},
-		NormalFloat = { link = "Subtle" },
+		NormalFloat = {
+			fg = faces.subtle.fg,
+			bg = faces.subtle.bg,
+			ctermfg = faces.subtle.ctermfg,
+			ctermbg = faces.subtle.ctermbg,
+		},
 		--
 		WinBar = { fg = faces.normal.fg, bg = faces.subtle.bg },
 		WinBarNC = { fg = faces.faded.fg, bg = faces.subtle.bg },
